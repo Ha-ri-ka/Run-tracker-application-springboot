@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class RunDatabase {
+public class RunDatabase_withoutSQL {
     private List<Run> runs= new ArrayList<>();
     List <Run> allRuns() //method to return all runs in the database
     {
-            return runs;
+        return runs;
     } //part of GET operation
 
     Optional<Run> findByid(Integer id)
@@ -34,7 +34,7 @@ public class RunDatabase {
         if (existingRun.isPresent())
         {
             //existingRun= Optional.ofNullable(run); //experimenting with update //this doesn't work lol
-              runs.set(runs.indexOf(existingRun.get()),run);
+            runs.set(runs.indexOf(existingRun.get()),run);
         }
     }
 
@@ -50,8 +50,3 @@ public class RunDatabase {
         runs.add(new Run(2,"arbi falls sesh", LocalDateTime.now(),LocalDateTime.now().plus(45, ChronoUnit.MINUTES),10,Location.OUTDOOR));
     }
 }
-
-
-
-
-

@@ -1,5 +1,4 @@
 package com.start.runnerApplication.run;
-
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +10,10 @@ import java.util.Optional;
 
 @RestController //enables this class to respond to requests.
 @RequestMapping("/api/runs") //we place a mapping at the controller level so that we don't have to specify a path for each of the subsequent methods. they will all be after runs/..whatever is in THEIR path
-public class RunController {
-    private final RunDatabase runDatabase; //create an instance of the DB class so that we can access its methods and variables
-    public RunController(RunDatabase runDatabase)
+
+public class RunController_withoutSQLdb {
+    private final RunDatabase_withoutSQL runDatabase; //create an instance of the DB class so that we can access its methods and variables
+    public RunController_withoutSQLdb(RunDatabase_withoutSQL runDatabase)
     {   this.runDatabase=runDatabase;   }
 
     //THIS IS A GET OPERATION
