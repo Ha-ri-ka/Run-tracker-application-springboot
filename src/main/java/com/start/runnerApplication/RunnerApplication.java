@@ -14,12 +14,13 @@ import java.time.temporal.ChronoUnit;
 
 @SpringBootApplication
 public class RunnerApplication {
-	private static final Logger log= LoggerFactory.getLogger(Appendable.class);
+//	private static final Logger log= LoggerFactory.getLogger(Appendable.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(RunnerApplication.class, args);
 	}
 
+	//JUST AN EXAMPLE TO SHOW HOW LOGGER WORKS
 //	@Bean
 //	CommandLineRunner runner(){
 //		return args -> {
