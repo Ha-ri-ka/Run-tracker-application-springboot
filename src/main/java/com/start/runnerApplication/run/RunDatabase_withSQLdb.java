@@ -1,8 +1,7 @@
 package com.start.runnerApplication.run;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
@@ -14,7 +13,6 @@ import java.util.Optional;
 @Repository
 public class RunDatabase_withSQLdb
 {
-    //private static final Logger log= LoggerFactory.getLogger(RunDatabase_withSQLdb.class);
     private final JdbcClient jdbcClient;
 
     public RunDatabase_withSQLdb(JdbcClient jdbcClient) {   this.jdbcClient = jdbcClient;  }
