@@ -28,6 +28,13 @@ public class RunDatabase_withSQLdb
     {
         return jdbcClient.sql("select * from run where run.id=:id").param("id",id).query(Run.class).optional(); //:id signifies named parameters
     }
+
+    //count number of tuples in DB: GET
+    public int count()
+    {
+        return jdbcClient.sql("SELECT COUNT(*) FROM run").query().listOfRows().size();
+    }
+
     //create new run: POST
     void create(Run run)
     {
@@ -49,16 +56,5 @@ public class RunDatabase_withSQLdb
     {
         var del=jdbcClient.sql("DELETE FROM run where id= :id").param("id",id).update();
         Assert.state(del==1,"Failed to update run "+id);
-    }
-
-    //count number of tuples in DB: GET
-    public int count()
-    {
-        return jdbcClient.sql("SELECT COUNT(*) FROM run").query().listOfRows().size();
-    }
-
-    //Save a list of runs into DB: POST
-    public void saveAll(List<Run> runs) {
-        runs.stream().forEach(this::create);
     }
 }

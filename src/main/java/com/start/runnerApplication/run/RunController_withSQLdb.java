@@ -38,6 +38,13 @@ public class RunController_withSQLdb {
         return run.get();
     }
 
+    //count number of run: GET
+    @GetMapping("/count")
+    int count()
+    {
+        return runDatabase.count();
+    }
+
     //create new run: POST
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
