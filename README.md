@@ -1,4 +1,4 @@
-**_This is an application that allows users to track their runs._**
+**_An application that allows users to track their runs._**
 
 There are 2 implementations for this: 
   1. with an in-memory database
@@ -19,6 +19,12 @@ _Http requests for the microservice can be made for:_
   4. Create a single new run (POST)
   5. Update an existing run using ID (PUT)
   6. Delete a run by ID (DELETE)
+
+**project details:** <br>
+Maven project<br>
+java 17<br>
+Springboot 3.3.0<br>
+jar packaging<br>
 
 _Dependencies used:_
 1. spring-boot-starter-web
