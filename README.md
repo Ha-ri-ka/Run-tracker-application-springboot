@@ -2,7 +2,7 @@
 
 There are 2 implementations for this: 
   1. with an in-memory database
-  2. with a postgresql DB access through docker
+  2. with a postgresql DB accessed through docker
      
 The application contains a single microservice "run" that allows a user to enter the following details about their run:<br>
 Id of the run<br>
