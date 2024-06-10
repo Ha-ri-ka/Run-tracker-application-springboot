@@ -33,21 +33,8 @@ public class RunDatabase_withSQLdb
     //count number of tuples in DB: GET
     public int count()
     {
-        List<Map<String, Object>> rows = jdbcClient.sql("SELECT COUNT(*) FROM run")
-                .query()
-                .listOfRows();
-        if (rows.isEmpty()) {
-            return 0;  // Or handle this case as needed
-        }
-        Map<String, Object> row = rows.get(0);
-        Object countObj = row.values().iterator().next();  // Retrieve the first (and only) value
-        if (countObj instanceof Number) {
-            return ((Number) countObj).intValue();
-        } else {
-            throw new IllegalStateException("Unexpected value type for count: " + countObj.getClass());
-        }
+        return jdbcClient.sql("SELECT * FROM run").query().listOfRows().size();
     }
-
 
     //create new run: POST
     void create(Run run)
